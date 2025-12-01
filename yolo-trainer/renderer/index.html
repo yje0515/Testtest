@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YOLO Trainer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>YOLO Trainer</h1>
+      <div class="form-group">
+        <label for="datasetPath">데이터셋 불러오기</label>
+        <input type="text" id="datasetPath" placeholder="/path/to/dataset" />
+      </div>
+      <div class="form-group">
+        <label for="modelSelect">YOLO 모델 선택</label>
+        <select id="modelSelect">
+          <option value="yolov5s">YOLOv5s</option>
+          <option value="yolov5m">YOLOv5m</option>
+          <option value="yolov8n">YOLOv8n</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="epochInput">Epoch</label>
+        <input type="number" id="epochInput" value="50" min="1" />
+      </div>
+      <div class="form-group">
+        <label for="patienceInput">Patience</label>
+        <input type="number" id="patienceInput" value="5" min="0" />
+      </div>
+      <div class="button-group">
+        <button id="startBtn" class="primary">학습 시작</button>
+        <button id="stopBtn" class="secondary">학습 중단</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section class="graph-section">
+        <h2>학습 그래프</h2>
+        <div class="graph-placeholder">그래프 출력 영역</div>
+      </section>
+      <section class="log-section">
+        <h2>로그</h2>
+        <pre id="logOutput"></pre>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
